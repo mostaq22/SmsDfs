@@ -1,17 +1,20 @@
 """
-MobileNumber is a validation class which will validate a give mobile number
-min length: 11
-type: string
-starts with
-    - 016, 018 -> Robi
-    - 013, 017 -> Grameenphone,
-    - 014, 019 -> Banglalink
-    - 015 -> TeleTalk,
-    - 011 -> CityCell
+Rules of validation of a mobile number
+
+* Length must be 11
+* Start with 01
+* Must be string
+* Must be in MNO CODE [018, 011, 017 etc]
 """
 
 
-class MobileNumber:
-
-    def __init__(self, mobile_number: str):
+def is_valid_mobile_number(mobile_number: str):
+    print(mobile_number, type(mobile_number))
+    if mobile_number.startswith('01') and len(mobile_number):
         pass
+    elif mobile_number[:]:
+        pass
+
+
+if __name__ == '__main__':
+    is_valid_mobile_number(71813208359)
