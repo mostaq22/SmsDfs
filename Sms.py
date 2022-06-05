@@ -33,8 +33,8 @@ class SmsEngine:
         self.__priority = priority if priority in self.__priority else 'GRL'
         self.is_valid()
 
-    def get_mno_list(self):
-        return self.__mno_list.keys()
+    def get_mno_list(self) -> list:
+        return list(self.__mno_list.keys())
 
     """
     The is_valid function is responsible to validate following attributes
