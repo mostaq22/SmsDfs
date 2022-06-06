@@ -1,0 +1,18 @@
+# Test your FastAPI endpoints
+
+POST http://127.0.0.1:8000/send_sms/
+Accept: application/json
+Content-Type: application/json
+
+{
+    "msisdn": "01813208359",
+    "message": "rrgr",
+    "mno": "GP",
+    "priority": "OTP"
+}
+###
+
+GET http://127.0.0.1:8000/hello/User
+Accept: application/json
+
+###

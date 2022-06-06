@@ -1,35 +1,44 @@
+import pydantic
+import json
+# from functools import lru_cache
+
+from exceptions import MobileNumber
+
 MNO_CODE = ["018", "011", "017", "011", "019", "012"]  # Will be Read from env file
-
-"""
-Rules of validation of a mobile number
-
-* Length must be 11
-* Start with 01
-* Must be string
-* Must be in MNO CODE [018, 011, 017 etc]
-"""
+MNO_LIST = ['RB', "GP", "BL", "TL", ]
 
 
 def is_valid_mobile_number(mobile_number: str):
-    if len(mobile_number) != 11:
-        print("length is not 11")
+    """
+      Rules of validation of a mobile number
+
+      * Length must be 11
+      * Start with 01
+      * Must be string
+      * Must be in MNO CODE [018, 011, 017 etc]
+    """
+    if type(mobile_number) is not str:
+        return MobileNumber.invalid_type()
+    elif len(mobile_number) != 11:
+        MobileNumber.invalid_length()
     elif not mobile_number.startswith('01'):
-        print("not start with 01")
-    elif not type(mobile_number) is str:
-        print("not string")
-    elif mobile_number[-11:-8] in MNO_CODE:
-        print("MNO code invalid")
+        MobileNumber.invalid_prefix()
+    elif mobile_number[-11:-8] not in MNO_CODE:
+        MobileNumber.invalid_mno_code()
+    else:
+        return True
 
 
-# try:
-#     if len(mobile_number) == 11 and \
-#             mobile_number.startswith('01') and \
-#             type(mobile_number) is str and \
-#             mobile_number[-11:-8] in MNO_CODE:
-#         return True
-# finally:
-#     raise Exception("Mobile number is not valid")
+def is_valid_mno(mno: str):
+    return mno in MNO_LIST or MobileNumber.invalid_mno()
+
+
+# @lru_cache(maxsize=128)
+def read_config():
+    with open('app_config.json') as json_file:
+        data = json.load(json_file)
+        print(data)
 
 
 if __name__ == '__main__':
-    is_valid_mobile_number('')
+    read_config()
