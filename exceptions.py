@@ -19,7 +19,7 @@ class MobileNumber:
 
     @staticmethod
     def invalid_mno_code():
-        raise ValueError("MNO code invalid")
+        raise ValueError("Invalid MNO code")
 
     @staticmethod
     def invalid_mno():

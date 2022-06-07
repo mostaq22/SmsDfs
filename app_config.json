@@ -3,5 +3,7 @@
         "GP": ["013", "017"],
         "RB": ["016", "018"],
         "BL": ["014", "019"]
-    }
+    },
+  "PRIORITY": ["OTP", "CNF", "GRL"],
+  "DEFAULT_PRIORITY": "GRL"
 }

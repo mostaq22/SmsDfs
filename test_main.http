@@ -8,7 +8,8 @@ Content-Type: application/json
     "msisdn": "01813208359",
     "message": "rrgr",
     "mno": "GP",
-    "priority": "OTP"
+    "priority": "OTP",
+    "mno_code": ""
 }
 ###
 
