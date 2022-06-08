@@ -1,7 +1,13 @@
 import json
 
 
-def get_config(key: [str, list, None] = None):
+def get_config(key: [str, list, None] = None) -> dict:
+    """
+    This function will receive a key as string or list or None.
+
+    :param key: str/list/None
+    :return: dict
+    """
     with open('app_config.json') as json_file:
         data = json.load(json_file)
         if key is None:
