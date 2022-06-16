@@ -1,4 +1,5 @@
 import json
+from os.path import join, dirname
 
 
 def get_config(key: [str, list, None] = None) -> dict:
@@ -8,7 +9,8 @@ def get_config(key: [str, list, None] = None) -> dict:
     :param key: str/list/None
     :return: dict
     """
-    with open('app_config.json') as json_file:
+    file_path = join(dirname(__file__), 'app_config.json')
+    with open(file_path) as json_file:
         data = json.load(json_file)
         if key is None:
             return data

@@ -4,6 +4,7 @@
         "RB": ["016", "018"],
         "BL": ["014", "019"]
     },
-  "PRIORITY": ["OTP", "CNF", "GRL"],
-  "DEFAULT_PRIORITY": "GRL"
+  "SMS_TYPE": ["quick", "queue"],
+  "DEFAULT_SMS_TYPE": "queue",
+  "MASKING": ["CITY BANK", "CITY BANK.", "CITYTOUCH", "CITYTOUCH.", "CITY_AMEX", "CITY_AMEX.", "CITY_VISA", "CITY_VISA."]
 }
