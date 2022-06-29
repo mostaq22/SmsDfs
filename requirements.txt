@@ -21,3 +21,18 @@ uvloop==0.14.0
 watchgod==0.7
 websockets==9.1
 zipp==3.6.0
+
+# for database actions
+SQLAlchemy~=1.4.37
+
+# for password hashing
+passlib~=1.7.4
+
+# for making http request [http client]
+requests~=2.27.1
+
+# for xml operations [third party api integration dependecies]
+xmltodict~=0.13.0
+
+# for test case
+pytest~=7.0.1
